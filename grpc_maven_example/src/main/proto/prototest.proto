@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package prototest;
+
+option java_package = "com.proto.prototest";
+option java_multiple_files = true;
+
+message TextMessage {
+	string text = 1;
+}
+
+message TextRequest {
+	TextMessage reqTextMsg = 1;
+}
+
+message TextResponse {
+    TextMessage resTextMsg = 1;
+}
+
+service TextService {
+    rpc protoTest(TextRequest) returns (TextResponse) {};
+}
